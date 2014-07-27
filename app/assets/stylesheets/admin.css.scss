@@ -1,0 +1,22 @@
+@import "compass";
+
+@import "bootstrap";
+// @import "bootstrap/theme";
+// @import "bootstrap-customized";
+
+@import "typography";
+
+@import "partials/footer";
+
+.admin-list {
+}
+
+.admin-list-item:hover {
+  .admin-list-item-actions {
+    display: block;
+  }
+}
+
+.admin-list-item-actions {
+  display: none;
+}

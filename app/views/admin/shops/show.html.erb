@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="pull-right">
+      <%= link_to t('edit'), edit_admin_shop_path(@shop), class: 'btn btn-default btn-xs' %>
+    </div>
+    <h3 class="panel-title"><%= @shop.name %></h3>
+  </div>
+
+  <div class="panel-body">
+    <ul>
+      <li><span class="glyphicon glyphicon-earphone"></span> <%= link_to @shop.tel, "tel:#{@shop.tel}" %></li>
+      <li><span class="glyphicon glyphicon-map-marker"></span> <%= link_to_google_maps @shop.address, @shop.address %></li>
+    </ul>
+  </div>
+</div>
+
+<div class="pull-right">
+  <%= link_to t('admin.new_drink'), new_admin_shop_drink_path(@shop.id), class: 'btn btn-default' %>
+</div>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#"><%= t('admin.drinks_menu') %></a></li>
+</ul>
+
+<%= render 'admin/shared/drink_list' %>
+
+<hr>
+
+<%= link_to admin_shops_path, class: 'btn btn-link' do %>
+  <i class="glyphicon glyphicon-chevron-left"></i> 返回飲料店列表
+<% end %>

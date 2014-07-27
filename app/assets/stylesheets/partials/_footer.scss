@@ -1,0 +1,22 @@
+.site-footer {
+  position: relative;
+  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-top: 1px solid hsl(0, 0%, 93%);
+
+  .mark-zootea {
+    position: absolute;
+    top: 42px;
+    left: 50%;
+    margin-left: -12px;
+    color: hsl(0, 0%, 80%);
+  }
+}
+
+.site-footer-links {
+  @include horizontal-list-container;
+  & > li {
+    @include horizontal-list-item;
+  }
+}

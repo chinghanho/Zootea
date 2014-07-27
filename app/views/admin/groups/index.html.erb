@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%# link_to t('admin.new_user'), new_admin_user_path, class: 'btn btn-default btn-xs pull-right' %>
+    <h1 class="panel-title"><%= t('admin.groups') %></h1>
+  </div>
+
+  <ul class="admin-list list-group">
+    <% @groups.each do |group| %>
+      <%= link_to group_path(group), class: 'admin-list-item list-group-item' do %>
+        <span>發起日期：<%= l group.created_at ,format: :long %></span>
+        <div class="admin-list-item-actions pull-right">
+          <%# link_to t('show'), admin_group_path(group), class: 'btn btn-default btn-xs' %>
+          <%# link_to t('edit'), edit_admin_group_path(group), class: 'btn btn-default btn-xs' %>
+        </div>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+

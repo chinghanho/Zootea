@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">開團訂飲料</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-4">
+              <p><%= t('groups.today_is', date: l(Date.today, format: :long)) %></p>
+            </div>
+          </div>
+          <%= form_for @group, url: groups_path, html: { class: 'form-horizontal', role: 'form' } do |f| %>
+
+            <div class="form-group">
+              <%= f.label :shop, class: 'control-label col-lg-4' %>
+              <div class="col-lg-4">
+                <%= f.select :shop, options_from_collection_for_select(@shops, 'id', 'name'), {}, { class: 'form-control' } %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :deadline, class: 'control-label col-lg-4' %>
+              <div class="col-lg-4">
+                <%= f.select :deadline, @valid_times.collect.with_index { |t, i| [distance_of_time_in_words(t), i] }, {},
+                    { class: 'form-control', :'data-toggle' => 'afterhours', :'data-target' => 'js-afterhours' } %>
+              </div>
+              <div class="form-control-static">之後是<span class="js-afterhours" data-time="<%= (Time.now + @valid_times.first).to_s :time %>"><%= (Time.now + @valid_times.first).to_s :time %></span></div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-8 col-lg-offset-4">
+                <%= f.submit t('submit'), class: 'btn btn-default' %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

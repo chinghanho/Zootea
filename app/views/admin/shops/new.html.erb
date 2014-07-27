@@ -1,0 +1,48 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= t('admin.new_shop') %></h3>
+  </div>
+  <div class="panel-body">
+
+    <%= form_for @shop, url: admin_shops_path, html: { role: 'form' } do |f| %>
+
+      <div class="form-group has-feedback <%= 'has-error' if @shop.errors.messages[:name] %>">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+        <% if @shop.errors.messages[:name].any? %>
+          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+          <% @shop.errors.messages[:name].each do |msg| %>
+            <span class="help-block"><%= msg %></span>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="form-group has-feedback <%= 'has-error' if @shop.errors.messages[:address] %>">
+        <%= f.label :address %>
+        <%= f.text_field :address, class: 'form-control' %>
+        <% if @shop.errors.messages[:address].any? %>
+          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+          <% @shop.errors.messages[:address].each do |msg| %>
+            <span class="help-block"><%= msg %></span>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="form-group has-feedback <%= 'has-error' if @shop.errors.messages[:tel] %>">
+        <%= f.label :tel %>
+        <%= f.text_field :tel, class: 'form-control' %>
+        <% if @shop.errors.messages[:tel].any? %>
+          <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+          <% @shop.errors.messages[:tel].each do |msg| %>
+            <span class="help-block"><%= msg %></span>
+          <% end %>
+        <% end %>
+      </div>
+
+      <%= f.submit t('admin.new_shop'), class: 'btn btn-default' %>
+      <%= link_to t('admin.back_to_shops_index'), admin_shops_path, class: 'btn' %>
+
+    <% end %>
+
+  </div>
+</div>

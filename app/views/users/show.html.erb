@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="col-lg-8 col-lg-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= @user.name %></h3>
+      </div>
+
+      <div class="panel-body">
+        <ul>
+          <li>計算平均多久喝一次飲料</li>
+          <li>是否能算出喝過飲料的總熱量？</li>
+          <li>是否能算出要運動多久才能消耗這些熱量？（這樣反而會讓人不想訂飲料吧……）</li>
+        </ul>
+
+        <ul>
+          <li>總共喝過 <%= @user.drinks.count %> 杯飲料</li>
+          <li>總共花了 <%= @user.drinks_amount %> 元買飲料</li>
+          <li>總共主揪過 <%= @user.groups.count %> 次飲料團</li>
+          <li>總共參與過 <%= @user.joined_groups.count %> 次飲料團</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

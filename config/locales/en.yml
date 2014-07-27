@@ -1,0 +1,77 @@
+en:
+  home: "Home"
+  admin_dashboard: "Admin dashboard"
+
+  show: "show"
+  edit: "Edit"
+  delete: "Delete"
+  save_change: "Save change"
+  submit: "Submit"
+
+  drinks:
+    sizes:
+      small: "Small"
+      medium: "Medium"
+      large: "Large"
+
+  groups:
+    new_group: "New group"
+    today_is: "Today is %{date}."
+    deadline_is: "Deadline is %{time}"
+
+  orders:
+    flashes:
+      order_created_successfully: "Successfully created."
+
+  auth:
+    sign_in: "Sign in"
+    sign_out: "Sign out"
+    flashes:
+      invalid_username_password_combination: "Invalid username/password combination."
+      required_login: "Please Log in to continue."
+      sign_in_successfully: "Sign in successfully."
+      sign_out_successfully: "Sign out successfully."
+
+  admin:
+    back_to_root: "Back to home page"
+    back_to_users_index: "Back to user list"
+    back_to_shops_index: "Back to shop list"
+    back_to_shop: "Back to %{shop_name}"
+    dashboard: "Dashboard"
+    users: "Users"
+    shops: "Shops"
+    groups: "Groups"
+    new_user: "Add a new user"
+    edit_user: "Edit user"
+    new_shop: "Add new shop"
+    edit_shop: "Edit shop"
+    no_shops: "Shops not yet created."
+    new_drink: "Add new drink"
+    edit_drink: "Edit drink"
+    no_drinks: "Drinks not yet created."
+    drinks_menu: "Drinks menu"
+    sizes_and_prices: 'Sizes / Prices'
+    stats: "Stats"
+    text:
+      keep_the_field_empty_if_the_size_is_not_exist: "Keep the field empty if the size is not exist."
+    flashes:
+      successfully_created: "Successfully created."
+      successfully_updated: "Successfully updated."
+      successfully_destroy: "Successfully destroyed."
+
+  activerecord:
+    attributes:
+      user:
+        username: "Username"
+        name: "Name"
+        email: "Email"
+        password: "Password"
+      shop:
+        name: "Name"
+        address: "Address"
+        tel: "Telephone"
+      drink:
+        name: "Drink name"
+      group:
+        shop: "Shop"
+        deadline: "Deadline"

@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= t('auth.sign_in') %></h3>
+        </div>
+        <div class="panel-body">
+
+          <%= form_for :session, url: sessions_path, html: { role: 'form' } do |f| %>
+
+            <div class="form-group">
+              <%= f.label :email %>
+              <%= f.text_field :email, class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :password %>
+              <%= f.password_field :password, class: 'form-control' %>
+            </div>
+
+            <%= f.submit t('auth.sign_in'), class: 'btn btn-default' %>
+
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

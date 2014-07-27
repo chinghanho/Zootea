@@ -1,0 +1,28 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>S</th>
+      <th>M</th>
+      <th>L</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @shop.drinks.empty? %>
+      <tr>
+        <td colspan="6"><%= t('admin.no_drinks') %></td>
+      </tr>
+    <% else %>
+      <% @shop.drinks.each do |drink| %>
+        <tr>
+          <td><%= drink.name %></td>
+          <td><%= drink.small_size_price.to_i %></td>
+          <td><%= drink.medium_size_price.to_i %></td>
+          <td><%= drink.large_size_price.to_i %></td>
+          <td><%= link_to t('edit'), edit_admin_shop_drink_path(@shop.id, drink), class: 'btn btn-default btn-xs' %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

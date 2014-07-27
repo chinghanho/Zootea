@@ -1,0 +1,17 @@
+defaults: &defaults
+  app_name: 'ZooCellar'
+
+development:
+  <<: *defaults
+  admin_emails:
+    - chh@cizoo.com
+
+test:
+  <<: *defaults
+  admin_emails:
+    - chh@cizoo.com
+
+production:
+  <<: *defaults
+  admin_emails:
+    - chh@cizoo.com

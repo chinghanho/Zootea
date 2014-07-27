@@ -1,0 +1,20 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1><%= CONFIG['app_name'] %></h1>
+    <p>在這裡揪團買了一杯飲料喝下去，接下來發生的事情所有人都震驚了！</p>
+    <p>（還沒有人揪團）</p>
+    <p>
+      <%= link_to t('groups.new_group'), new_group_path, class: 'btn btn-primary btn-lg', role: 'button' %>
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-lg-8 col-lg-offset-2">
+    <ul class="list-group">
+      <% @groups.each do |group| %>
+        <li class="list-group-item"><%= link_to group.owner.name, user_path(group.owner) %> 曾經在 <%= l group.created_at, format: :long %> 的時候揪團喝 <%= group.shop.name %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

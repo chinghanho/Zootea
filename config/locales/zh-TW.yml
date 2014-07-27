@@ -1,0 +1,77 @@
+zh-TW:
+  home: "首頁"
+  admin_dashboard: "管理員後台"
+
+  show: "檢視"
+  edit: "編輯"
+  delete: "刪除"
+  save_change: "儲存變更"
+  submit: "送出"
+
+  drinks:
+    sizes:
+      small: "小杯"
+      medium: "中杯"
+      large: "大杯"
+
+  groups:
+    new_group: "點我揪團喝飲料！"
+    today_is: "今天日期是%{date}"
+    deadline_is: "收單時間是%{time}"
+
+  orders:
+    flashes:
+      order_created_successfully: "訂單已經送出，你已經加入飲料團的小夥伴行列！"
+
+  auth:
+    sign_in: "登入"
+    sign_out: "登出"
+    flashes:
+      invalid_username_password_combination: "是無效的 Email 或密碼"
+      required_login: "請登入以繼續進行下一步"
+      sign_in_successfully: "已經成功登入。好飲料不來一杯嗎？"
+      sign_out_successfully: "成功登出"
+
+  admin:
+    back_to_root: "回到首頁"
+    back_to_users_index: "返回使用者列表"
+    back_to_shops_index: "返回飲料店列表"
+    back_to_shop: "返回%{shop_name}頁面"
+    dashboard: "控制台"
+    users: "使用者列表"
+    shops: "飲料店列表"
+    groups: "揪團列表"
+    new_user: "新增使用者"
+    edit_user: "編輯使用者"
+    new_shop: "新增飲料店"
+    edit_shop: "編輯飲料店"
+    no_shops: "還沒有任何飲料店資料喔！"
+    new_drink: "新增飲料品項"
+    edit_drink: "編輯飲料品項"
+    no_drinks: "還沒有新增任何飲料"
+    drinks_menu: "飲料菜單"
+    sizes_and_prices: '尺寸 / 價格'
+    stats: "統計資訊"
+    text:
+      keep_the_field_empty_if_the_size_is_not_exist: "如果沒有該飲料尺寸保留欄位空白。"
+    flashes:
+      successfully_created: "成功建立！"
+      successfully_updated: "成功更新！"
+      successfully_destroy: "成功刪除！"
+
+  activerecord:
+    attributes:
+      user:
+        username: "使用者名稱"
+        name: "姓名"
+        email: "電子郵件"
+        password: "密碼"
+      shop:
+        name: "飲料店名稱"
+        address: "地址"
+        tel: "電話"
+      drink:
+        name: "飲料品名"
+      group:
+        shop: "飲料店"
+        deadline: "收單時間"

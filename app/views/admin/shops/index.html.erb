@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= link_to t('admin.new_shop'), new_admin_shop_path, class: 'btn btn-default btn-xs pull-right' %>
+    <h1 class="panel-title"><%= t('admin.shops') %></h1>
+  </div>
+
+  <ul class="admin-list list-group">
+    <% if @shops.empty? %>
+      <li class="list-group-item">
+        <%= t('admin.no_shops') %>
+      </li>
+    <% else %>
+      <% @shops.each do |shop| %>
+        <li class="admin-list-item list-group-item">
+          <h4 class="list-group-item-heading">
+            <%= link_to shop.name, admin_shop_path(shop) %>
+          </h4>
+          <div class="admin-list-item-actions pull-right">
+            <%= link_to t('show'), admin_shop_path(shop), class: 'btn btn-default btn-xs' %>
+            <%= link_to t('edit'), edit_admin_shop_path(shop), class: 'btn btn-default btn-xs' %>
+          </div>
+          <div class="text-muted">
+            Tel: <%= shop.tel %> · <%= shop.address %>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+

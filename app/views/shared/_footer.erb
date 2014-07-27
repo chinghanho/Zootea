@@ -1,0 +1,18 @@
+<div class="container">
+  <footer class="site-footer">
+    <ul class="site-footer-links pull-right">
+      <li><%= link_to "中文版", :controller => controller.controller_name,
+          :action => controller.action_name, :locale => "zh-TW"  %></li>
+      <li><%= link_to "English", :controller => controller.controller_name,
+          :action => controller.action_name, :locale => "en" %></li>
+    </ul>
+
+    <%= link_to root_path do %>
+      <span class="mark-zootea glyphicon glyphicon-home" title="<%= CONFIG['app_name'] %>"></span>
+    <% end %>
+
+    <ul class="site-footer-links">
+      <li>&copy; <%= Time.now.year %> <span><%= CONFIG['app_name'] %></span></li>
+    </ul>
+  </footer>
+</div>
