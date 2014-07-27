@@ -1,0 +1,35 @@
+.stats {
+  margin-right: -15px;
+  margin-bottom: -10px;
+  margin-left: -15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-top: 1px solid hsl(0, 0%, 93%);
+}
+
+.stats-group {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.stat {
+  display: table-cell;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  font-size: 12px;
+  color: hsl(0, 0%, 60%);
+  text-transform: uppercase;
+  border-left: 1px solid hsl(0, 0%, 93%);
+  &:first-child {
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+.stat-number {
+  display: block;
+  color: hsl(0, 0%, 20%);
+  font-size: 16px;
+}
