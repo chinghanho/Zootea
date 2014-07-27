@@ -2,7 +2,21 @@
   <div class="panel-heading">
     <h3 class="panel-title"><%= t('admin.dashboard') %></h3>
   </div>
+
   <div class="panel-body">
+    <div class="stats">
+      <div class="stats-group">
+        <%= link_to admin_users_path, class: 'stat' do %>
+          <strong class="stat-number"><%= User.count %></strong> Zoopeople
+        <% end %>
+        <span class="stat no-link">
+          <strong class="stat-number"><%= Drink.count %></strong> 杯飲料
+        </span>
+        <span class="stat no-link">
+          <strong class="stat-number"><%= Shop.count %></strong> 飲料店
+        </span>
+      </div>
+    </div>
 
     <ul>
       <li>總共有多少家飲料店</li>
@@ -17,6 +31,5 @@
       <li>最常喝飲料的人是誰</li>
       <li>最不常喝飲料的人是誰</li>
     </ul>
-
   </div>
 </div>
