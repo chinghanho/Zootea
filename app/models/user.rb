@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
 
   def drinks_amount
     amount = 0
-    orders.each { |order| amount += order.drink["#{order.size}_size_price"].to_i }
+    orders.each { |order| amount += order.price.to_i }
     amount
   end
 
