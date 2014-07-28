@@ -36,7 +36,7 @@
           <ul class="list-group">
             <% @group.orders.each do |order| %>
               <li class="list-group-item">
-                <%= link_to order.user.name, user_path(order.user) %> 點了 <%= order.drink.name %>
+                <%= link_to order.user.name, user_path(order.user) %> 點了 <%= order.drink.name %> <%= order.description %>
               </li>
             <% end %>
           </ul>
