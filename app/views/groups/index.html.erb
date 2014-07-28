@@ -10,11 +10,15 @@
 </div>
 
 <div class="container">
-  <div class="col-lg-8 col-lg-offset-2">
-    <ul class="list-group">
-      <% @groups.each do |group| %>
-        <li class="list-group-item"><%= link_to group.owner.name, user_path(group.owner) %> 曾經在 <%= l group.created_at, format: :long %> 的時候揪團喝 <%= group.shop.name %></li>
-      <% end %>
-    </ul>
+  <div class="row">
+    <div class="col-lg-12">
+      <ul class="list-group">
+        <% @groups.each do |group| %>
+          <li class="list-group-item">
+            #<%= group.id %> <%= link_to group.owner.name, user_path(group.owner) %> 曾經在 <%= l group.created_at, format: :long %> 的時候揪團喝 <%= group.shop.name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
