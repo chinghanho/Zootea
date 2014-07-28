@@ -2,14 +2,11 @@
 #
 # Table name: drinks
 #
-#  id                :integer          not null, primary key
-#  shop_id           :integer
-#  name              :string(255)
-#  small_size_price  :decimal(, )
-#  medium_size_price :decimal(, )
-#  large_size_price  :decimal(, )
-#  created_at        :datetime
-#  updated_at        :datetime
+#  id         :integer          not null, primary key
+#  shop_id    :integer
+#  name       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
 #
 
 class Drink < ActiveRecord::Base

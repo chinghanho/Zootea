@@ -4,7 +4,8 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :drink_id
       t.integer :user_id
       t.integer :group_id
-      t.string :size
+      t.decimal :price
+      t.text    :description
 
       t.timestamps
     end

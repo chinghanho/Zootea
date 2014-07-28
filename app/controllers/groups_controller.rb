@@ -6,8 +6,8 @@ class GroupsController < ApplicationController
   def index
     @group = Group.ongoing.first
     @groups = Group.order('id DESC').limit(10)
-    @order = Order.new({size: Order::SIZE_TYPE.second})
-    @drinks = @group && @group.shop.drinks
+    @order = Order.new
+    # @drinks = @group && @group.shop.drinks
     render :show if !@group.nil?
   end
 

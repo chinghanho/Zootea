@@ -16,9 +16,6 @@ ActiveRecord::Schema.define(version: 20140713161151) do
   create_table "drinks", force: true do |t|
     t.integer  "shop_id"
     t.string   "name"
-    t.decimal  "small_size_price"
-    t.decimal  "medium_size_price"
-    t.decimal  "large_size_price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,7 +32,8 @@ ActiveRecord::Schema.define(version: 20140713161151) do
     t.integer  "drink_id"
     t.integer  "user_id"
     t.integer  "group_id"
-    t.string   "size"
+    t.decimal  "price"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

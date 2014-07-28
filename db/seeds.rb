@@ -16,7 +16,4 @@ shop = Shop.create(name: '50 嵐',
                    address: '台北市濟南路二段60-2號',
                    tel: '0223915189')
 
-drink = shop.drinks.create(name: '四季春茶',
-                           small_size_price: '',
-                           medium_size_price: 25,
-                           large_size_price: 30)
+drink = shop.drinks.create(name: '四季春茶')

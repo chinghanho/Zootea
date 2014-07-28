@@ -7,18 +7,14 @@
       <div class="form-group">
         <%= f.label :drink, class: 'control-label col-lg-3' %>
         <div class="col-lg-3">
-          <%= f.select :drink, @drinks.collect { |d| [d.name, d.id] }, {}, { class: 'form-control' } %>
+          <%= f.text_field :drink, class: 'form-control' %>
         </div>
       </div>
 
       <div class="form-group">
-        <%= f.label :size, class: 'control-label col-lg-3' %>
-        <div class="col-lg-6">
-          <% Order::SIZE_TYPE.each do |s| %>
-            <div class="radio-inline">
-              <%= f.radio_button :size, s %> <%= s.titleize %>
-            </div>
-          <% end %>
+        <%= f.label :price, class: 'control-label col-lg-3' %>
+        <div class="col-lg-3">
+          <%= f.number_field :price, class: 'form-control' %>
         </div>
       </div>
 
