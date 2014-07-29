@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-      params.require(:order).permit(:drink, :size)
+      params.require(:order).permit(:drink, :price, :description)
     end
 
 end
