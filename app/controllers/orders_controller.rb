@@ -18,11 +18,12 @@ class OrdersController < ApplicationController
     @order.drink = drink
     @order.price = order_params[:price]
 
-    if @order.save
+    if !current_user_joined_group && @order.save
       flash[:success] = I18n.t('orders.flashes.order_created_successfully')
       redirect_to root_url
     else
-      render :show
+      # flash[:danger] = "你已經加入過囉！" if current_user_joined_group
+      # render controller: 'groups', action: 'show'
     end
   end
 
@@ -34,6 +35,10 @@ class OrdersController < ApplicationController
 
     def order_params
       params.require(:order).permit(:drink, :price, :description)
+    end
+
+    def current_user_joined_group
+      @group.users.include? current_user
     end
 
 end
