@@ -24,7 +24,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <%= link_to t('admin.back_to_root'), root_path %>
+          <%= link_to root_path do %>
+            <i class="glyphicon glyphicon-chevron-left"></i> <%= t('admin.back_to_root') %>
+          <% end %>
         </li>
       </ul>
     </div>

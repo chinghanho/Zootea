@@ -2,7 +2,9 @@
   <div class="panel-heading">
     <h3 class="panel-title"><%= t('admin.dashboard') %></h3>
   </div>
+
   <div class="panel-body">
+    <p>可以試試看用 D3.js 做一些圖表。</p>
 
     <ul>
       <li>總共有多少家飲料店</li>
@@ -18,5 +20,18 @@
       <li>最不常喝飲料的人是誰</li>
     </ul>
 
+    <div class="stats">
+      <div class="stats-group">
+        <%= link_to admin_users_path, class: 'stat' do %>
+          <strong class="stat-number"><%= User.count %></strong>Zoopeople
+        <% end %>
+        <span class="stat no-link">
+          <strong class="stat-number"><%= Order.count %></strong>飲料
+        </span>
+        <span class="stat no-link">
+          <strong class="stat-number"><%= Shop.count %></strong>飲料店
+        </span>
+      </div>
+    </div>
   </div>
 </div>

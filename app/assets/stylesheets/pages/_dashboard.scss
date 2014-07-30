@@ -1,0 +1,39 @@
+$stats-margin: $panel-body-padding;
+$stats-padding: $panel-body-padding;
+$stats-border: $gray-lighter;
+
+.stats {
+  margin-right: -$stats-margin;
+  margin-bottom: -$stats-margin;
+  margin-left: -$stats-margin;
+  padding-right: $stats-padding;
+  padding-left: $stats-padding;
+  border-top: 1px solid $stats-border;
+}
+
+.stats-group {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.stat {
+  display: table-cell;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  font-size: 12px;
+  color: hsl(0, 0%, 60%);
+  text-transform: uppercase;
+  border-left: 1px solid $stats-border;
+  &:first-child {
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+.stat-number {
+  display: block;
+  color: hsl(0, 0%, 20%);
+  font-size: 16px;
+}
