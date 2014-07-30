@@ -7,10 +7,17 @@ class OrdersController < ApplicationController
   end
 
   def create
+    drink = Drink.find_by(name: order_params[:drink])
+    if drink.nil?
+      shop = @group.shop
+      drink = shop.drinks.create(name: order_params[:drink])
+    end
+
     @order = @group.orders.new
     @order.user = current_user
-    @order.drink = Drink.find(order_params[:drink])
-    @order.size = order_params[:size]
+    @order.drink = drink
+    @order.price = order_params[:price]
+
     if @order.save
       flash[:success] = I18n.t('orders.flashes.order_created_successfully')
       redirect_to root_url
