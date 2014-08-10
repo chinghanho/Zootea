@@ -39,6 +39,11 @@
         <% end %>
       </div>
 
+      <div class="form-group">
+        <%= f.label :menu %>
+        <%= f.file_field :menu, accept: 'image/jpg,image/jpeg,image/gif,image/png' %>
+      </div>
+
       <%= f.submit t('admin.new_shop'), class: 'btn btn-default' %>
       <%= link_to t('admin.back_to_shops_index'), admin_shops_path, class: 'btn' %>
 
