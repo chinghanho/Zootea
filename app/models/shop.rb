@@ -12,6 +12,8 @@
 
 class Shop < ActiveRecord::Base
 
+  mount_uploader :menu, AttachmentUploader
+
   validates :name, presence: true
   validates :tel, presence: true
 

@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20140713161151) do
     t.string   "name"
     t.string   "address"
     t.string   "tel"
+    t.string   "menu"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
