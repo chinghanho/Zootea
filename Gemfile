@@ -23,6 +23,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 3.8.0'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
