@@ -20,4 +20,5 @@
 //= require bootstrap/modal
 //= require moment
 //= require moment/zh-tw.js
+//= require twitter/typeahead
 //= require_tree .
