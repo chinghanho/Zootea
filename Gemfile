@@ -12,6 +12,7 @@ gem 'font-awesome-sass', '~> 4.1.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'momentjs-rails', '~> 2.7.0'
+gem 'twitter-typeahead-rails', '~> 0.10.2'
 
 # gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
