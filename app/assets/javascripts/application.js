@@ -17,6 +17,7 @@
 //= require bootstrap/collapse
 //= require bootstrap/transition
 //= require bootstrap/alert
+//= require bootstrap/modal
 //= require moment
 //= require moment/zh-tw.js
 //= require_tree .

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
+    <div class="col-lg-8">
       <% if @group.active? %>
         <div class="well well-sm text-info">
           <%= link_to @group.owner.name, user_path(@group.owner) %> 在 <%= @group.created_at.to_s(:time) %> 的時候揪了大家來喝 <%= @group.shop.name %>！<%= t('groups.deadline_is', time: l(@group.deadline, format: :long)) %>，快點來點飲料！
@@ -45,6 +45,26 @@
             <% end %>
           </ul>
         <% end %>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= @group.shop.name %>菜單（點圖放大）</h3>
+        </div>
+        <div class="panel-body">
+          <%= image_tag @group.shop.menu.url, class: 'img-responsive',  data: { toggle: 'modal', target: '#menu-modal' } %>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">熱門推薦</h3>
+        </div>
+        <div class="panel-body">
+          可以放一些比較多人點的飲料。
+        </div>
       </div>
     </div>
   </div>
