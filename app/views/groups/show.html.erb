@@ -15,7 +15,7 @@
           <ul>
             <li>揪團時間：<%= l(@group.created_at, format: :long) %></li>
             <li>收單時間：<%= l(@group.deadline, format: :long) %></li>
-            <li>夥伴人數：<%= @group.users.count %></li>
+            <li>夥伴人數：<%= @group.users.count %> 人</li>
             <li>訂購的飲料店：<%= @group.shop.name %></li>
           </ul>
         </div>
