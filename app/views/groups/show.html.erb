@@ -5,23 +5,23 @@
         <div class="well well-sm text-info">
           <%= link_to @group.owner.name, user_path(@group.owner) %> 在 <%= @group.created_at.to_s(:time) %> 的時候揪了大家來喝 <%= @group.shop.name %>！<%= t('groups.deadline_is', time: l(@group.deadline, format: :long)) %>，快點來點飲料！
         </div>
-      <% else %>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">飲料團資訊</h3>
-          </div>
-          <div class="panel-body">
-            <ul>
-              <li>揪團時間：<%= @group.created_at %></li>
-              <li>收單時間：<%= @group.deadline %></li>
-              <li>夥伴人數：<%= @group.users.count %></li>
-              <li>訂購的飲料店：<%= @group.shop.name %></li>
-            </ul>
-          </div>
-        </div>
       <% end %>
 
-      <% if !@group.users.include? current_user %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">飲料團資訊</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li>揪團時間：<%= l(@group.created_at, format: :long) %></li>
+            <li>收單時間：<%= l(@group.deadline, format: :long) %></li>
+            <li>夥伴人數：<%= @group.users.count %></li>
+            <li>訂購的飲料店：<%= @group.shop.name %></li>
+          </ul>
+        </div>
+      </div>
+
+      <% if !@group.users.include?(current_user) && @group.active? %>
         <%= render partial: 'new_order_form' %>
       <% else %>
         <div class="well well-sm">
