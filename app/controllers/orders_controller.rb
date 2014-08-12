@@ -13,18 +13,16 @@ class OrdersController < ApplicationController
       drink = shop.drinks.create(name: order_params[:drink])
     end
 
-    @order = @group.orders.new
-    @order.user = current_user
-    @order.drink = drink
-    @order.price = order_params[:price]
+    order       = @group.orders.new
+    order.user  = current_user
+    order.drink = drink
+    order.price = order_params[:price]
+    order.save
+    flash[:success] = I18n.t('orders.flashes.order_created_successfully')
+    redirect_to root_url
 
-    if !current_user_joined_group && @order.save
-      flash[:success] = I18n.t('orders.flashes.order_created_successfully')
-      redirect_to root_url
-    else
-      # flash[:danger] = "你已經加入過囉！" if current_user_joined_group
-      # render controller: 'groups', action: 'show'
-    end
+    # fallback
+    # !current_user_joined_group && order.save
   end
 
   private
