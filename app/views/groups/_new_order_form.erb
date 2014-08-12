@@ -21,7 +21,7 @@
       <div class="form-group">
         <%= f.label :drink, class: 'control-label col-lg-3' %>
         <div class="col-lg-3">
-          <%= f.text_field :drink, class: 'form-control', data: { toggle: 'autocomplete' } %>
+          <%= f.text_field :drink, class: 'form-control', data: { toggle: 'autocomplete', target: @group.shop.drinks.map { |d| d.name } } %>
         </div>
       </div>
 

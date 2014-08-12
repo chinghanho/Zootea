@@ -6,33 +6,24 @@
 
   var Autocomplete = function (element) {
     this.$element = $(element);
+    this.data     = this.$element.data('target');
   };
 
   Autocomplete.version = '0.0.1';
 
   Autocomplete.prototype.init = function () {
 
-    var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-      'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-      'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-      'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-      'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-      'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-      'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-      'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-      'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-    ];
+    var dataset = this.data;
 
     // constructs the suggestion engine
-    var states = new Bloodhound({
+    var dataset = new Bloodhound({
       datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
       queryTokenizer: Bloodhound.tokenizers.whitespace,
-      // `states` is an array of state names defined in "The Basics"
-      local: $.map(states, function(state) { return { value: state }; })
+      local: $.map(dataset, function(data) { return { value: data }; })
     });
 
     // kicks off the loading/processing of `local` and `prefetch`
-    states.initialize();
+    dataset.initialize();
 
     this.$element.typeahead({
       hint: true,
@@ -40,11 +31,11 @@
       minLength: 1
     },
     {
-      name: 'states',
+      name: 'dataset',
       displayKey: 'value',
       // `ttAdapter` wraps the suggestion engine in an adapter that
       // is compatible with the typeahead jQuery plugin
-      source: states.ttAdapter()
+      source: dataset.ttAdapter()
     });
   }
 
