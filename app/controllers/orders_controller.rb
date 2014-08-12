@@ -2,6 +2,10 @@ class OrdersController < ApplicationController
   before_filter :set_group, only: :create
 
 
+  def new
+    @order = Group.find(params[:group_id]).orders.new
+  end
+
   def show
     @order = Order.find(params[:id])
   end

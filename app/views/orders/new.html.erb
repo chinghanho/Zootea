@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <div id="menu-modal" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title"><%= @order.group.shop.name %></h4>
+            </div>
+            <div class="modal-body">
+              <%= image_tag @order.group.shop.menu.url, class: 'img-responsive' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">訂購 <%= @order.group.shop.name %> 飲料</h3>
+        </div>
+        <div class="panel-body">
+          <%= form_for @order, url: group_orders_path(@order.group), html: { class: 'form-horizontal', role: 'form' } do |f| %>
+            <div class="form-group">
+              <%= f.label :drink, class: 'control-label col-lg-3' %>
+              <div class="col-lg-3">
+                <%= f.text_field :drink, class: 'form-control', data: { toggle: 'autocomplete', target: @order.group.shop.drinks.map { |d| d.name } } %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :price, class: 'control-label col-lg-3' %>
+              <div class="col-lg-3">
+                <%= f.number_field :price, class: 'form-control' %>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :description, class: 'control-label col-lg-3' %>
+              <div class="col-lg-6">
+                <%= f.text_area :description, class: 'form-control', rows: 8 %>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+              <div class="col-lg-8 col-lg-offset-3">
+                <%= f.submit t('submit'), class: 'btn btn-default' %>
+                <%= link_to '回揪團頁面', group_path(@order.group), class: 'btn btn-link' %>
+                <%= link_to '刪除', group_path(@order.group), class: 'btn btn-link pull-right',
+                    method: :delete, data: { confirm: '你正打算取消並刪除這次團購，有關此團的相關訂單也將一同刪除，此操作所影響的資料將無法復原，你確定要這麼做嗎？' } %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= @order.group.shop.name %>菜單（點圖放大）</h3>
+        </div>
+        <div class="panel-body">
+          <%= image_tag @order.group.shop.menu.url, class: 'img-responsive',  data: { toggle: 'modal', target: '#menu-modal' } %>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">熱門推薦</h3>
+        </div>
+        <div class="panel-body">
+          可以放一些比較多人點的飲料。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
