@@ -11,22 +11,20 @@ class OrdersController < ApplicationController
   end
 
   def create
-    drink = Drink.find_by(name: order_params[:drink])
-    if drink.nil?
-      shop = @group.shop
-      drink = shop.drinks.create(name: order_params[:drink])
+    drink = @group.shop.drinks.find_or_create_by(name: order_params[:drink][:name])
+
+    @order       = @group.orders.new
+    @order.user  = current_user
+    @order.drink = drink
+    @order.price = order_params[:price]
+    @order.description = order_params[:description]
+
+    if !current_user_joined_group && @order.save
+      flash[:success] = I18n.t('orders.flashes.order_created_successfully')
+      redirect_to root_url
+    else
+      render :new
     end
-
-    order       = @group.orders.new
-    order.user  = current_user
-    order.drink = drink
-    order.price = order_params[:price]
-    order.save
-    flash[:success] = I18n.t('orders.flashes.order_created_successfully')
-    redirect_to root_url
-
-    # fallback
-    # !current_user_joined_group && order.save
   end
 
   private
@@ -36,7 +34,7 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-      params.require(:order).permit(:drink, :price, :description)
+      params.require(:order).permit(:price, :description, drink: [:name])
     end
 
     def current_user_joined_group
