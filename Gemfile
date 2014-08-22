@@ -36,11 +36,19 @@ gem 'mini_magick', '~> 3.8.0'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'pry-rails', '~> 0.3.2'
+gem 'awesome_print', :require => false
+
 group :development do
   # gem 'capistrano'
   # gem 'magic_encoding'
   gem 'annotate', '~> 2.6.5'
   # gem 'letter_opener'
-  gem 'pry-rails', '~> 0.3.2'
   gem 'spring'
+end
+
+group :development, :test do
+  # gem 'pry-plus'
+  gem 'hirb', :require => false
+  gem 'hirb-unicode', :require => false
 end
