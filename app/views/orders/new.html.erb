@@ -25,7 +25,7 @@
               <%= f.fields_for :drink, @order.drink do |df| %>
                 <%= df.label :name, class: 'control-label col-lg-3' %>
                 <div class="col-lg-3">
-                  <%= df.text_field :name, class: 'form-control', data: { toggle: 'autocomplete', target: @order.group.shop.drinks.map { |d| d.name } } %>
+                  <%= df.text_field :name, class: 'form-control', data: { toggle: 'autocomplete', target: @order.group.shop.drinks.map { |d| d.name } }, autocomplete: 'off' %>
                 </div>
               <% end %>
             </div>
