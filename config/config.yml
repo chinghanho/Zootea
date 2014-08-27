@@ -1,5 +1,5 @@
 defaults: &defaults
-  app_name: 'ZooCellar'
+  app_name: '喝點什麼'
 
 development:
   <<: *defaults
