@@ -28,6 +28,10 @@ class Group < ActiveRecord::Base
     deadline > Time.now
   end
 
+  def outdated?
+    deadline < Time.now
+  end
+
 
   private
 

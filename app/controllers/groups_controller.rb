@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @order = Order.new({size: Order::SIZE_TYPE.second})
+    @order = Order.new
     @drinks = @group && @group.shop.drinks
   end
 
