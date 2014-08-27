@@ -58,10 +58,13 @@
 
   var afterhoursData = '[data-toggle="afterhours"]';
 
+  var ready = function () {
+    Plugin.call($(afterhoursData), 'init');
+  }
+
   $(document)
-    .ready(function () {
-      Plugin.call($(afterhoursData), 'init');
-    })
+    .on('ready', ready)
+    .on('page:load', ready)
     .on('change.zt.afterhours.data-api', afterhoursData, function (e) {
       e.preventDefault();
       Plugin.call($(this), 'showtime');

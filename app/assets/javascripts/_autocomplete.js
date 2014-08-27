@@ -70,9 +70,12 @@
 
   var autocompleteData = '[data-toggle="autocomplete"]';
 
+  var ready = function () {
+    Plugin.call($(autocompleteData), 'init');
+  }
+
   $(document)
-    .ready(function () {
-      Plugin.call($(autocompleteData), 'init');
-    });
+    .on('ready', ready)
+    .on('page:load', ready);
 
 }(jQuery);
