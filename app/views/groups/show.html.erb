@@ -21,11 +21,15 @@
         </div>
       <% end %>
 
-      <% if !@group.users.include? current_user %>
+      <% if user_signed_in? && !@group.users.include?(current_user) %>
         <%= render partial: 'new_order_form' %>
-      <% else %>
+      <% elsif user_signed_in? && @group.users.include?(current_user) %>
         <div class="well well-sm">
           TODO: 這裡顯示你點了什麼飲料。
+        </div>
+      <% else %>
+        <div class="well well-sm">
+          快點<%= link_to '登入', signin_path %>訂杯飲料吧！
         </div>
       <% end %>
 
