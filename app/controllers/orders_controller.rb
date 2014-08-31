@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
     @order.price = order_params[:price]
     @order.description = order_params[:description]
 
-    if !current_user_joined_group && @order.save
+    if !@group.users.include?(current_user) && @order.save
       flash[:success] = I18n.t('orders.flashes.order_created_successfully')
       redirect_to root_url
     else
@@ -40,10 +40,6 @@ class OrdersController < ApplicationController
 
     def order_params
       params.require(:order).permit(:price, :description, drink: [:name])
-    end
-
-    def current_user_joined_group
-      @group.users.include? current_user
     end
 
 end
