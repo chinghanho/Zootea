@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    # TODO: 好像應該要設個檢查，防止直接 HTTP inject 東西進來
     drink = @group.shop.drinks.find_or_create_by(name: order_params[:drink][:name])
 
     @order       = @group.orders.new
