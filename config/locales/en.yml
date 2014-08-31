@@ -18,6 +18,8 @@ en:
     new_group: "New group"
     today_is: "Today is %{date}."
     deadline_is: "Deadline is %{time}"
+    flashes:
+      order_existed: "Order existed!"
 
   orders:
     flashes:

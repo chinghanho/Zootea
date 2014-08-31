@@ -18,6 +18,8 @@ zh-TW:
     new_group: "點我揪團喝飲料！"
     today_is: "今天日期是%{date}"
     deadline_is: "收單時間是%{time}"
+    flashes:
+      order_existed: "你已經訂過了啦！"
 
   orders:
     flashes:

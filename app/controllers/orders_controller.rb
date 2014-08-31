@@ -7,7 +7,12 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @order = @group.orders.new
+    if @group.users.include? current_user
+      flash[:success] = I18n.t('groups.flashes.order_existed')
+      redirect_to @group
+    else
+      @order = @group.orders.new
+    end
   end
 
   def create
