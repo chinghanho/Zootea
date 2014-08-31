@@ -50,9 +50,11 @@
         </div>
       </div>
 
-      <div class="panel panel-default">
-        <%= link_to '跟團！', new_group_order_path(@group), class: 'btn btn-primary btn-block' %>
-      </div>
+      <% unless @group.users.include? current_user %>
+        <div class="panel panel-default">
+          <%= link_to '跟團！', new_group_order_path(@group), class: 'btn btn-primary btn-block' %>
+        </div>
+      <% end %>
 
       <div class="panel panel-default">
         <div class="panel-heading">
