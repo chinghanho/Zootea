@@ -6,6 +6,7 @@
 #  name       :string(255)
 #  address    :string(255)
 #  tel        :string(255)
+#  menu       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
 #
